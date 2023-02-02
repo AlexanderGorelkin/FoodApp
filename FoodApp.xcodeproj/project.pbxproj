@@ -22,6 +22,9 @@
 		0A976A9E298C5B7C00E721F3 /* DishCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A976A9D298C5B7C00E721F3 /* DishCategory.swift */; };
 		0AF808EA298C5C11007D6745 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF808E9298C5C11007D6745 /* String+Extensions.swift */; };
 		0AF808ED298C5F52007D6745 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF808EC298C5F52007D6745 /* CardView.swift */; };
+		0AF808F1298C6B60007D6745 /* DishPortraitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF808EF298C6B60007D6745 /* DishPortraitCollectionViewCell.swift */; };
+		0AF808F2298C6B60007D6745 /* DishPortraitCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AF808F0298C6B60007D6745 /* DishPortraitCollectionViewCell.xib */; };
+		0AF808F4298C6C85007D6745 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF808F3298C6C85007D6745 /* Dish.swift */; };
 		786878C5C67ABF14410F95AA /* Pods_FoodApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B06474D2BB525AFACE8F5E6 /* Pods_FoodApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +47,9 @@
 		0A976A9D298C5B7C00E721F3 /* DishCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategory.swift; sourceTree = "<group>"; };
 		0AF808E9298C5C11007D6745 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		0AF808EC298C5F52007D6745 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		0AF808EF298C6B60007D6745 /* DishPortraitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishPortraitCollectionViewCell.swift; sourceTree = "<group>"; };
+		0AF808F0298C6B60007D6745 /* DishPortraitCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DishPortraitCollectionViewCell.xib; sourceTree = "<group>"; };
+		0AF808F3298C6C85007D6745 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		5D989F1398744A3860D97D45 /* Pods-FoodApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodApp.debug.xcconfig"; path = "Target Support Files/Pods-FoodApp/Pods-FoodApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9B06474D2BB525AFACE8F5E6 /* Pods_FoodApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -100,6 +106,7 @@
 			children = (
 				0A976A84298C115F00E721F3 /* OnboardingSlide.swift */,
 				0A976A9D298C5B7C00E721F3 /* DishCategory.swift */,
+				0AF808F3298C6C85007D6745 /* Dish.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -151,6 +158,7 @@
 		0A976A97298C5AAE00E721F3 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				0AF808EE298C6B38007D6745 /* DishPortraitCollectionViewCell */,
 				0A976A98298C5ABE00E721F3 /* CategoryCollectionViewCell */,
 			);
 			path = CollectionViewCells;
@@ -171,6 +179,15 @@
 				0AF808EC298C5F52007D6745 /* CardView.swift */,
 			);
 			path = CardView;
+			sourceTree = "<group>";
+		};
+		0AF808EE298C6B38007D6745 /* DishPortraitCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0AF808EF298C6B60007D6745 /* DishPortraitCollectionViewCell.swift */,
+				0AF808F0298C6B60007D6745 /* DishPortraitCollectionViewCell.xib */,
+			);
+			path = DishPortraitCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		D3CC77517C82BC598E995306 /* Frameworks */ = {
@@ -252,6 +269,7 @@
 			files = (
 				0A976A9C298C5ADB00E721F3 /* CategoryCollectionViewCell.xib in Resources */,
 				0A976A74298C048A00E721F3 /* LaunchScreen.storyboard in Resources */,
+				0AF808F2298C6B60007D6745 /* DishPortraitCollectionViewCell.xib in Resources */,
 				0A976A71298C048A00E721F3 /* Assets.xcassets in Resources */,
 				0A976A6F298C048900E721F3 /* Main.storyboard in Resources */,
 			);
@@ -317,6 +335,8 @@
 				0A976A9E298C5B7C00E721F3 /* DishCategory.swift in Sources */,
 				0AF808ED298C5F52007D6745 /* CardView.swift in Sources */,
 				0A976A87298C148F00E721F3 /* OnboardingCollectionViewCell.swift in Sources */,
+				0AF808F4298C6C85007D6745 /* Dish.swift in Sources */,
+				0AF808F1298C6B60007D6745 /* DishPortraitCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
