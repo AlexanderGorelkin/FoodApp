@@ -8,7 +8,7 @@
 import UIKit
 
 class OnboardingViewController: UIViewController {
-
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nextButton: UIButton!
@@ -24,14 +24,15 @@ class OnboardingViewController: UIViewController {
             }else {
                 nextButton.setTitle("Next", for: .normal)
             }
-                
+            
         }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         collectionView.dataSource = self
         collectionView.delegate = self
         
@@ -40,9 +41,10 @@ class OnboardingViewController: UIViewController {
             OnboardingSlide(title: "World-Class Chefs", description: "Our dishes are prepared by only the best.", image: #imageLiteral(resourceName: "slide1")),
             OnboardingSlide(title: "Instant World-Wide Delivery", description: "Your orders will be delivered instantly irrespective of your location around the world.", image: #imageLiteral(resourceName: "slide3"))
         ]
+        pageContol.numberOfPages = slides.count
     }
-
-
+    
+    
     @IBAction func nextButtonClicked(_ sender: UIButton) {
         if currentPage == slides.count - 1 {
             nextButton.setTitle("Get started", for: .normal)

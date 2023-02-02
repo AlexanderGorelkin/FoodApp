@@ -16,6 +16,7 @@
 		0A976A83298C10C900E721F3 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A976A82298C10C900E721F3 /* View+Extensions.swift */; };
 		0A976A85298C115F00E721F3 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A976A84298C115F00E721F3 /* OnboardingSlide.swift */; };
 		0A976A87298C148F00E721F3 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A976A86298C148F00E721F3 /* OnboardingCollectionViewCell.swift */; };
+		0A976A8A298C270900E721F3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A976A89298C270900E721F3 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		0A976A82298C10C900E721F3 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		0A976A84298C115F00E721F3 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		0A976A86298C148F00E721F3 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		0A976A89298C270900E721F3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		0A976A7C298C0D9B00E721F3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0A976A88298C26EC00E721F3 /* Home */,
 				0A976A7E298C0DBE00E721F3 /* Onboarding */,
 			);
 			path = Views;
@@ -114,6 +117,14 @@
 				0A976A82298C10C900E721F3 /* View+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0A976A88298C26EC00E721F3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0A976A89298C270900E721F3 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +203,7 @@
 				0A976A6A298C048900E721F3 /* SceneDelegate.swift in Sources */,
 				0A976A83298C10C900E721F3 /* View+Extensions.swift in Sources */,
 				0A976A80298C0DE200E721F3 /* OnboardingViewController.swift in Sources */,
+				0A976A8A298C270900E721F3 /* HomeViewController.swift in Sources */,
 				0A976A87298C148F00E721F3 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
