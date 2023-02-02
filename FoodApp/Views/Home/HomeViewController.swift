@@ -54,7 +54,7 @@ class HomeViewController: UIViewController {
         
         categoryCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
         popularCollectionView.register(UINib(nibName: DishPortraitCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: DishPortraitCollectionViewCell.identifier)
-        shefsCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
+        shefsCollectionView.register(UINib(nibName: DishLandscapeCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: DishLandscapeCollectionViewCell.identifier)
         
     }
     
@@ -68,6 +68,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case categoryCollectionView:
             return categories.count
         case popularCollectionView:
+            return populars.count
+        case shefsCollectionView:
             return populars.count
         default:
             return 0
@@ -83,6 +85,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return cell
         case popularCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DishPortraitCollectionViewCell.identifier, for: indexPath) as! DishPortraitCollectionViewCell
+            cell.setup(populars[indexPath.row])
+            return cell
+        case shefsCollectionView:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DishLandscapeCollectionViewCell.identifier, for: indexPath) as! DishLandscapeCollectionViewCell
             cell.setup(populars[indexPath.row])
             return cell
             
