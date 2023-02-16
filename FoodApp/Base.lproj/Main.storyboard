@@ -404,6 +404,37 @@
             </objects>
             <point key="canvasLocation" x="3020.6106870229005" y="18.30985915492958"/>
         </scene>
+        <!--List Dishes View Controller-->
+        <scene sceneID="zpC-51-p5f">
+            <objects>
+                <viewController storyboardIdentifier="ListDishesViewController" id="GgB-de-tct" customClass="ListDishesViewController" customModule="FoodApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DGb-F3-dLb">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bki-pL-Pid">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hvx-4E-LaS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bki-pL-Pid" firstAttribute="trailing" secondItem="Hvx-4E-LaS" secondAttribute="trailing" id="16G-Tf-pJO"/>
+                            <constraint firstItem="bki-pL-Pid" firstAttribute="leading" secondItem="Hvx-4E-LaS" secondAttribute="leading" id="57B-tc-TNE"/>
+                            <constraint firstAttribute="bottom" secondItem="bki-pL-Pid" secondAttribute="bottom" id="Zsq-Ow-QuR"/>
+                            <constraint firstItem="bki-pL-Pid" firstAttribute="top" secondItem="Hvx-4E-LaS" secondAttribute="top" id="fLi-m0-nNh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="bki-pL-Pid" id="qs6-6f-vk1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vp8-FV-pqQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3990.0763358778622" y="35.91549295774648"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="gol-fR-9Ww">
             <objects>
