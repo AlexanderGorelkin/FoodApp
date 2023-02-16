@@ -32,6 +32,13 @@ class HomeViewController: UIViewController {
         .init(id: "id2", name: "hello", description: "hello", image: "https://picsum.photos/100/200", calories: 123),
         .init(id: "id2", name: "hello", description: "hello", image: "https://picsum.photos/100/200", calories: 123)
     ]
+    var specials: [Dish] = [
+        .init(id: "id1", name: "name", description: "hello", image: "https://picsum.photos/100/200", calories: 123),
+        .init(id: "id2", name: "name", description: "hello", image: "https://picsum.photos/100/200", calories: 123),
+        .init(id: "id2", name: "name", description: "hello", image: "https://picsum.photos/100/200", calories: 123),
+        .init(id: "id2", name: "name", description: "hello", image: "https://picsum.photos/100/200", calories: 123),
+        .init(id: "id2", name: "name", description: "hello", image: "https://picsum.photos/100/200", calories: 123)
+    ]
     
     
     
@@ -91,14 +98,22 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DishLandscapeCollectionViewCell.identifier, for: indexPath) as! DishLandscapeCollectionViewCell
             cell.setup(populars[indexPath.row])
             return cell
-            
-            
         default:
             return UICollectionViewCell()
         }
         
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == categoryCollectionView {
+            
+        } else {
+            let controller = DishDetailViewController.instantiate()
+            controller.dish = collectionView == popularCollectionView ? populars[indexPath.row] : specials[indexPath.row]
+            navigationController?.pushViewController(controller, animated: true)
+        }
+    }
     
     
     

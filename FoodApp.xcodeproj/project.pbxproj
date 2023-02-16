@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A44B28F299E60FA0087606E /* ViewContoller+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A44B28E299E60FA0087606E /* ViewContoller+Extensions.swift */; };
 		0A976A68298C048900E721F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A976A67298C048900E721F3 /* AppDelegate.swift */; };
 		0A976A6A298C048900E721F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A976A69298C048900E721F3 /* SceneDelegate.swift */; };
 		0A976A6F298C048900E721F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A976A6D298C048900E721F3 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		07C46758ACE8673EE296F3CB /* Pods-FoodApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodApp.release.xcconfig"; path = "Target Support Files/Pods-FoodApp/Pods-FoodApp.release.xcconfig"; sourceTree = "<group>"; };
+		0A44B28E299E60FA0087606E /* ViewContoller+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewContoller+Extensions.swift"; sourceTree = "<group>"; };
 		0A976A64298C048900E721F3 /* FoodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A976A67298C048900E721F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A976A69298C048900E721F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				0A976A82298C10C900E721F3 /* View+Extensions.swift */,
 				0AF808E9298C5C11007D6745 /* String+Extensions.swift */,
+				0A44B28E299E60FA0087606E /* ViewContoller+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AF808EA298C5C11007D6745 /* String+Extensions.swift in Sources */,
+				0A44B28F299E60FA0087606E /* ViewContoller+Extensions.swift in Sources */,
 				0A976A9B298C5ADB00E721F3 /* CategoryCollectionViewCell.swift in Sources */,
 				0A976A85298C115F00E721F3 /* OnboardingSlide.swift in Sources */,
 				0A976A68298C048900E721F3 /* AppDelegate.swift in Sources */,
