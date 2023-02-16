@@ -289,8 +289,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Food App" id="tRG-j4-atx">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Reb-T4-ER6"/>
                         <barButtonItem key="rightBarButtonItem" image="cart.circle.fill" catalog="system" id="DrA-lt-Gtu">
                             <color key="tintColor" red="0.61568629740000003" green="0.14901961389999999" blue="0.15686275059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <segue destination="qpF-kf-kPy" kind="show" id="tcS-ld-9PI"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -434,6 +438,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vp8-FV-pqQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3990.0763358778622" y="35.91549295774648"/>
+        </scene>
+        <!--List Orders View Controller-->
+        <scene sceneID="HXk-en-F64">
+            <objects>
+                <viewController storyboardIdentifier="ListOrdersViewController" id="qpF-kf-kPy" customClass="ListOrdersViewController" customModule="FoodApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ADU-ko-d9j">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fcB-MZ-44E">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eeI-5S-A6U"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fcB-MZ-44E" firstAttribute="leading" secondItem="eeI-5S-A6U" secondAttribute="leading" id="DTM-89-VUA"/>
+                            <constraint firstAttribute="bottom" secondItem="fcB-MZ-44E" secondAttribute="bottom" id="ewa-Sz-Ug5"/>
+                            <constraint firstItem="fcB-MZ-44E" firstAttribute="trailing" secondItem="eeI-5S-A6U" secondAttribute="trailing" id="k4N-ra-963"/>
+                            <constraint firstItem="fcB-MZ-44E" firstAttribute="top" secondItem="eeI-5S-A6U" secondAttribute="top" id="mwY-30-vNP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FX7-Qe-1yX"/>
+                    <connections>
+                        <outlet property="tableView" destination="fcB-MZ-44E" id="kfC-VD-6pV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6mA-GN-EjV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2029.7709923664122" y="750.70422535211276"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gol-fR-9Ww">
