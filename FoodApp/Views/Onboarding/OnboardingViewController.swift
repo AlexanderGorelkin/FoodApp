@@ -33,6 +33,7 @@ class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         
         
+        
         collectionView.dataSource = self
         collectionView.delegate = self
         
