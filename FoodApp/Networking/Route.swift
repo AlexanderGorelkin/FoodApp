@@ -18,7 +18,7 @@ enum Route {
         switch self {
             
         case .temp:
-            return "/temp"
+            return "/dishes/cat1"
         }
         
         
