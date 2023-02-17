@@ -13,8 +13,11 @@ struct NetworkService {
     
     private init() {}
     
-    func myFirstRequest(completion: @escaping(Result<[Dish], Error>) -> Void) {
-        request(route: .temp, method: .get, completion: completion)
+    func fetchAllCategories(completion: @escaping(Result<AllDishes, Error>) -> Void) {
+        
+        request(route: .fetchAllCategories, method: .get, completion: completion)
+        
+        
     }
     
     private func request<T: Decodable>(route: Route,
@@ -26,7 +29,7 @@ struct NetworkService {
             completion(.failure(AppError.unknownError))
             return
         }
-        
+        print(request.url)
         URLSession.shared.dataTask(with: request) { data, response, error in
             var result: Result<Data, Error>?
             if let data = data {
@@ -55,6 +58,7 @@ struct NetworkService {
             let decoder = JSONDecoder()
             guard let response = try? decoder.decode(ApiResponse<T>.self, from: data) else {
                 completion(.failure(AppError.errorDecoding))
+                print("Тут ошибка")
                 return
             }
             if let error = response.error {
@@ -65,6 +69,7 @@ struct NetworkService {
                 completion(.success(decodedData))
             } else {
                 completion(.failure(AppError.errorDecoding))
+                print("Или тут")
             }
             
             
@@ -94,6 +99,7 @@ struct NetworkService {
                 var urlComponent = URLComponents(string: urlString)
                 urlComponent?.queryItems = params.map { URLQueryItem(name: $0, value: "\($1)") }
                 urlRequest.url = urlComponent?.url
+                
                 
             case .post, .delete, .patch:
                 let bodyData = try? JSONSerialization.data(withJSONObject: params, options: [])

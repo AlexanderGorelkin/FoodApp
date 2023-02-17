@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class HomeViewController: UIViewController {
     
@@ -18,43 +19,16 @@ class HomeViewController: UIViewController {
     
     
     
-    var categories: [DishCategory] = [
-        .init(id: "id1", name: "asdadad", image: "https://picsum.photos/100/200"),
-        .init(id: "id2", name: "dsfsgsfg", image: "https://picsum.photos/100/200"),
-        .init(id: "id3", name: "werwerw", image: "https://picsum.photos/100/200"),
-        .init(id: "id4", name: "xcvxcvxv", image: "https://picsum.photos/100/200"),
-    ]
-    
-    var populars: [Dish] = [
-        .init(id: "id1", name: "hello", description: "hello", image: "https://picsum.photos/100/200", calories: 123),
-        .init(id: "id2", name: "hello", description: "hello", image: "https://picsum.photos/100/200", calories: 123),
-        .init(id: "id2", name: "hello", description: "hello", image: "https://picsum.photos/100/200", calories: 123),
-        .init(id: "id2", name: "hello", description: "hello", image: "https://picsum.photos/100/200", calories: 123),
-        .init(id: "id2", name: "hello", description: "hello", image: "https://picsum.photos/100/200", calories: 123)
-    ]
-    var specials: [Dish] = [
-        .init(id: "id1", name: "name", description: "hello", image: "https://picsum.photos/100/200", calories: 123),
-        .init(id: "id2", name: "name", description: "hello", image: "https://picsum.photos/100/200", calories: 123),
-        .init(id: "id2", name: "name", description: "hello", image: "https://picsum.photos/100/200", calories: 123),
-        .init(id: "id2", name: "name", description: "hello", image: "https://picsum.photos/100/200", calories: 123),
-        .init(id: "id2", name: "name", description: "hello", image: "https://picsum.photos/100/200", calories: 123)
-    ]
+    var categories: [DishCategory] = []
+    var populars: [Dish] = []
+    var specials: [Dish] = []
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NetworkService.shared.myFirstRequest { (result) in
-            switch result {
-            case .success(let data):
-                for dish in data {
-                    print(dish.name ?? "")
-                }
-            case .failure(let error):
-                print("Error is \(error)")
-            }
-        }
+        
         
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
@@ -64,6 +38,24 @@ class HomeViewController: UIViewController {
         shefsCollectionView.dataSource = self
         
         registerCells()
+        
+        ProgressHUD.show()
+        
+        NetworkService.shared.fetchAllCategories { [weak self] (result) in
+            switch result {
+                
+            case .success(let allDishes):
+                ProgressHUD.dismiss()
+                self?.categories = allDishes.categories ?? []
+                self?.populars = allDishes.populars ?? []
+                self?.specials = allDishes.specials ?? []
+                self?.categoryCollectionView.reloadData()
+                self?.popularCollectionView.reloadData()
+                self?.shefsCollectionView.reloadData()
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
         
     }
     

@@ -4,7 +4,9 @@
 target 'FoodApp' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'Kingfisher'
   # Pods for FoodApp
+  pod 'Kingfisher'
+  pod 'ProgressHUD'
+  
 
 end
