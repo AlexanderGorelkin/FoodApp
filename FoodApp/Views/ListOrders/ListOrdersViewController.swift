@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class ListOrdersViewController: UIViewController {
 
@@ -13,9 +14,7 @@ class ListOrdersViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var orders: [Order] = [
-        .init(id: "id", name: "heloo wrold", dish: .init(id: "id1", name: "hello", description: "hello", image: "https://picsum.photos/100/200", calories: 123))
-    ]
+    var orders: [Order] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +22,20 @@ class ListOrdersViewController: UIViewController {
         registerCells()
         tableView.dataSource = self
         tableView.delegate = self
+        ProgressHUD.show()
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        NetworkService.shared.fetchOrders { [weak self] (result) in
+            switch result {
+            case .success(let orders):
+                ProgressHUD.dismiss()
+                self?.orders = orders
+                self?.tableView.reloadData()
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
     }
     
     private func registerCells() {
