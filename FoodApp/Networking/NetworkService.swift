@@ -14,16 +14,20 @@ struct NetworkService {
     private init() {}
     
     func fetchAllCategories(completion: @escaping(Result<AllDishes, Error>) -> Void) {
-        
         request(route: .fetchAllCategories, method: .get, completion: completion)
-        
-        
+    }
+    func placeOrder(dishId: String, name: String, completion: @escaping(Result<Order, Error>) -> Void) {
+        let params = [
+            "name": name
+        ]
+        request(route: .placeOrder(dishId), method: .post, parameters: params, completion: completion)
     }
     
+    
     private func request<T: Decodable>(route: Route,
-                                     method: Method,
-                                     parameters: [String: Any]? = nil,
-                                     completion: @escaping(Result<T, Error>) -> Void) {
+                                       method: Method,
+                                       parameters: [String: Any]? = nil,
+                                       completion: @escaping(Result<T, Error>) -> Void) {
         
         guard let request = createRequest(route: route, method: method, parameters: parameters) else {
             completion(.failure(AppError.unknownError))

@@ -13,6 +13,7 @@ enum Route {
     static let baseUrl = "https://yummie.glitch.me"
     
     case fetchAllCategories
+    case placeOrder(String)
     
     
     var description: String {
@@ -20,6 +21,8 @@ enum Route {
             
         case .fetchAllCategories:
             return "/dish-categories"
+        case .placeOrder(let dishId):
+            return "/orders/\(dishId)"
         }
         
         

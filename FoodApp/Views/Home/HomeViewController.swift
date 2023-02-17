@@ -80,7 +80,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case popularCollectionView:
             return populars.count
         case shefsCollectionView:
-            return populars.count
+            return specials.count
         default:
             return 0
         }
@@ -99,7 +99,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return cell
         case shefsCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DishLandscapeCollectionViewCell.identifier, for: indexPath) as! DishLandscapeCollectionViewCell
-            cell.setup(populars[indexPath.row])
+            cell.setup(specials[indexPath.row])
             return cell
         default:
             return UICollectionViewCell()

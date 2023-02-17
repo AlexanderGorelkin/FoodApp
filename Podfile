@@ -7,6 +7,6 @@ target 'FoodApp' do
   # Pods for FoodApp
   pod 'Kingfisher'
   pod 'ProgressHUD'
-  
+  pod 'IQKeyboardManagerSwift'
 
 end
